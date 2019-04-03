@@ -1,24 +1,13 @@
-<STYLE>         span.string {color: fuchsia;}         span.number {color: darkblue;}         span.keyword {font-weight: bold; color: black;}         span.comment {font-style: italic; color: gray;}             </STYLE><span class=keyword>function</span> f(x: real): real;<br>
-<span class=keyword><span class=keyword>begin</span><br></span><br>
-  result := sin(x)*x;
-<span class=keyword>end</span>;<br>
+<STYLE>         span.string {color: fuchsia;}         span.number {color: darkblue;}         span.keyword {font-weight: bold; color: black;}         span.comment {font-style: italic; color: gray;}             </STYLE><span class=keyword>var</span> a : Integer;<br>
 
-<span class=keyword>var</span><br>
-  N: integer;
-  a, b: real;
-<span class=keyword><span class=keyword>begin</span><br></span><br>
-  write(<span class=string>'Введите N: '</span>);<br>
-  N := ReadInteger;
-  Assert(N><span class=number>0</span>);<br>
-  write(<span class=string>'Введите a и b: '</span>);<br>
-  a := ReadReal;
-  b := ReadReal;
-
-  <span class=keyword>var</span><br> h := (b-a)/N;
-  <span class=keyword>var</span><br> x := a;
-  for <span class=keyword>var</span><br> i:=0 to N do
-  <span class=keyword><span class=keyword>begin</span><br></span><br>
-    writeln(x:<span class=number>5</span>:<span class=number>2</span>,f(x):<span class=number>10</span>:<span class=number>4</span>);<br>
-    x += h;
+<span class=keyword>begin</span><br>
+  <span class=comment>// comment</span><br>
+  WriteLn(<span class=string>'Hello, world'</span>);<br>
+  WriteLn(<span class=string>'This is spartaa'</span>);<br>
+  a := <span class=number>100</span>;<br>
+  <span class=keyword>if</span> (<span class=number>10</span> > <span class=number>12</span>) <span class=keyword>then</span><br><br><br>
+  <span class=keyword>begin</span><br>
+    WriteLn(<span class=string>'False'</span>)<br>
   <span class=keyword>end</span>;<br>
+
 <span class=keyword>end</span>.<br>
