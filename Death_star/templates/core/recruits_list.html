@@ -1,0 +1,24 @@
+{% extends 'core/wrapper.html' %}
+
+{% block title %}Наши рекруты{% endblock %}
+
+{% block header %}
+    <h2>Рекруты, прошедшие тест Руки Тени</h2>
+    <a href="{% url 'core:all_siths_shortcut' %}"><button>Ситхи с более чем одним учеником</button></a>
+{% endblock %}
+
+{% block content %}
+    {{ error }}
+    <form method="post">
+        {% csrf_token %}
+        {% for recruit in rec_list %}
+            {% if recruit.is_complete_test and not recruit.is_shadow_hand %}
+                <p><p>Имя рекрута: {{ recruit.name }}</p>
+                <p>Родная планета: {{ recruit.planet.name }}</p>
+                <input type="checkbox" id="recruit-{{ recruit.id }}" name="recruit-id" value="{{ recruit.id }}">
+                <a href="{% url 'core:rec_detail' recruit.id %}">Посмотреть результаты теста</a></p>
+            {% endif %}
+        {% endfor %}
+        <input type="submit" value="Выбрать">
+    </form>
+{% endblock %}

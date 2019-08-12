@@ -1,0 +1,10 @@
+{% extends 'core/wrapper.html' %}
+
+{% block header %}
+    <h2>Тренировочный лагерь руки тьмы</h2>
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'core:all_siths' %}"><button>Для ситхов</button></a>
+    <a href="{% url 'core:create_rec' %}"><button>Для рекрутов</button></a>
+{% endblock %}

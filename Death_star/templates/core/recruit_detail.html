@@ -1,0 +1,18 @@
+{% extends 'core/wrapper.html' %}
+
+{% block title %}Оповещение{% endblock %}
+
+{% block header %}
+    <h2>Результаты теста рекрута: {{ recruit.name }}</h2>
+    <h3>Возраст: {{ recruit.age }}</h3>
+    <h3>Почта: {{ recruit.email }}</h3>
+    <h3>Родная планета: {{ recruit.planet.name }}</h3>
+    <a href="{% url 'core:all_recruits' %}"><button>Назад</button></a>
+{% endblock %}
+
+{% block content %}
+    {% for answer in recruit_answers %}
+        <p>На вопрос: {{ answer.task.description }}</p>
+        <p>Рекрут дал ответ: {{ answer.choice_text }}</p>
+    {% endfor %}
+{% endblock %}

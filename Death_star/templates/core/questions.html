@@ -1,0 +1,16 @@
+{% extends 'core/wrapper.html' %}
+
+{% block title %}Тест{% endblock %}
+{% block content %}
+    <form method="post">
+            {% csrf_token %}
+           <h3>Questions</h3>
+            {% for question in question_list %}
+                <p> Вопрос номер: {{ question.id }}</p>
+                <p>{{ question.description }}</p>
+                <label for="{{ question.id }}">Ответ:</label>
+                <input id="{{ question.id }}" name="answer-{{ question.id }}" required>
+            {% endfor %}
+            <input type="submit" value="Готово">
+    </form>
+{% endblock %}

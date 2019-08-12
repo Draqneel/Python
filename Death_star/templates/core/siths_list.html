@@ -1,0 +1,17 @@
+{% extends 'core/wrapper.html' %}
+
+{% block title %}Добро пожаловать{% endblock %}
+
+{% block header %}
+    <h2>Склоняюсь перед вашей мудростью, владыка</h2>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    {% for sith in siths_list %}
+        <p><label for="sith-id">Количество рук тьмы: {{ sith.padavans.count }}</label>
+        <input type="submit" name="sith-id" value="{{ sith.name }}"></p>
+    {% endfor %}
+    </form>
+{% endblock %}

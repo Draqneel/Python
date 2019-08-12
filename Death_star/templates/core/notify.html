@@ -1,0 +1,11 @@
+{% extends 'core/wrapper.html' %}
+
+{% block title %}Оповещение{% endblock %}
+
+{% block header %}<h2 style="color: red">{{ message }}</h2>{% endblock %}
+
+{% block content %}
+    <h3>{{ error }}</h3>
+    <a href="{% url 'core:all_recruits' %}"><button>Назад</button></a>
+    <a href="{% url 'core:main' %}"><button>На главную</button></a>
+{% endblock %}

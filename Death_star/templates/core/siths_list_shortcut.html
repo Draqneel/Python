@@ -1,0 +1,16 @@
+{% extends 'core/wrapper.html' %}
+
+{% block title %}Почетная доска{% endblock %}
+
+{% block header %}
+    <h2>Ситхи с более чем одним учеником</h2>
+    <a href="{% url 'core:all_recruits' %}"><button>Назад</button></a>
+{% endblock %}
+
+{% block content %}
+    {% for sith in siths_list %}
+        {% if sith.padavans.count > 1 %}
+            <p>Владыка {{ sith.name }} c {{ sith.planet.name }}</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
