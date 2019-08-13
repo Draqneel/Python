@@ -40,10 +40,11 @@ class Questions(generic.ListView):
     def post(self, request):
         questions = ShadowHandQuestion.objects.all()
         rec_id = self.request.session['recruit_id']
+        recruit = Recruit.objects.get(id=rec_id)
         for question in questions:
             QuestionChoice.objects.create(task=question,
                                           choice_text=self.request.POST['answer-%d' % question.id],
-                                          voted=Recruit.objects.get(id=rec_id))
+                                          voted=recruit)
         return HttpResponseRedirect(reverse('core:congratulations'))
 
 
